@@ -1,41 +1,288 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Sudeep Sarkar - Personal Website</title>
+    <title>Sudeep Sarkar</title>
     <style>
         body {
-            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkNalg3B2j763p9FAzFS41PTR8tGLRqVcC_A&usqp=CAU');
-            background-size: cover;
+            font-family: 'Futura', sans-serif;
+            background-color: #F1F1F1;
+            margin: 0;
+            padding: 0;
+        }
+        h2, h4 {
+            margin: 0;
+        }
+        .part {
+            padding: 50px;
+            text-align: center;
+        }
+        .part1 {
+            background-color: #F8B195;
+            color: #355C7D;
+        }
+        .part2 {
+            background-color: #F67280;
+            color: #355C7D;
+        }
+        .part3 {
+            background-color: #C06C84;
             color: white;
-            font-family: Arial, sans-serif;
+        }
+        .part4 {
+            background-color: #6C5B7B;
+            color: white;
+        }
+        .part5 {
+            background-color: #355C7D;
+            color: white;
+        }
+        .profile-photo {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            margin: 0 auto;
+            object-fit: cover;
+        }
+        .education-list {
+            text-align: left;
+            margin: 0;
+            padding-left: 20px;
+        }
+        .skills-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .skills-list li {
+            display: inline-block;
+            margin: 5px;
+            padding: 8px 15px;
+            background-color: rgba(0, 0, 0, 0.4);
+            border-radius: 20px;
+            color: white;
+        }
+        .languages-table {
+            margin: 0 auto;
+            width: 80%;
+            border-collapse: collapse;
+        }
+        .languages-table th, .languages-table td {
+            padding: 8px;
+            text-align: center;
+            border: 1px solid white;
+            color: white;
+        }
+        .languages-table th {
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+        .blog {
+            margin: 50px 0;
+            padding: 0 20%;
+            text-align: center;
+        }
+        .blog p {
+            font-size: 18px;
+            line-height: 1.5;
+            color: white;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin: 50px 0;
+        }
+        .social-icons a {
+            margin: 0 15px;
+        }
+        .social-icons img {
+            width: 30px;
+            height: 30px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+        .connect-me {
+            color: black;
+        }
+        .menu-icon {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            z-index: 999;
+        }
+        .menu-icon span {
+            display: block;
+            width: 30px;
+            height: 3px;
+            margin-bottom: 5px;
+            background-color: #000;
+        }
+        .menu {
+            position: fixed;
+            top: 0;
+            right: -250px;
+            width: 250px;
+            height: 100%;
+            background-color: #fff;
+            z-index: 998;
+            transition: right 0.3s ease-in-out;
+        }
+        .menu.open {
+            right: 0;
+        }
+        .menu-header {
+            display: flex;
+            justify-content: flex-end;
+            padding: 20px;
+        }
+        .menu-header .close-btn {
+            cursor: pointer;
+            font-size: 20px;
+        }
+        .menu-list {
+            padding: 0;
+            list-style: none;
+        }
+        .menu-list li {
+            padding: 15px;
+            border-bottom: 1px solid #ccc;
+        }
+        .menu-list li:last-child {
+            border-bottom: none;
+        }
+        .menu-list li a {
+            text-decoration: none;
+            color: #000;
+            transition: color 0.3s;
+        }
+        .menu-list li a:hover {
+            color: #F67280;
+        }
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #F67280;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+            z-index: 999;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .scroll-to-top.show {
+            opacity: 1;
         }
     </style>
 </head>
 <body>
-    <h1 style="text-align: center;">Welcome to Sudeep Sarkar's Personal Website</h1>
-    <div style="text-align: center;">
-        <p>Webpage Managed by Sudeep Sarkar</p>
+    <div class="menu-icon" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
     </div>
-    <hr>
-    <div>
-        <h2>About Me</h2>
-        <ul>
-            <li>CLASS: COMP B</li>
-            <li>ROLL NO: 42</li>
+    <div class="menu" id="sideMenu">
+        <div class="menu-header">
+            <span class="close-btn" onclick="toggleMenu()">X</span>
+        </div>
+        <ul class="menu-list">
+            <li><a href="#part1" onclick="toggleMenu()">Profile</a></li>
+            <li><a href="#part2" onclick="toggleMenu()">Education</a></li>
+            <li><a href="#part3" onclick="toggleMenu()">Skills</a></li>
+            <li><a href="#part4" onclick="toggleMenu()">Languages</a></li>
+            <li><a href="#part5" onclick="toggleMenu()">Blog</a></li>
+            <li><a href="#part6" onclick="toggleMenu()">Contact Me</a></li>
         </ul>
     </div>
-    <hr>
-    <div>
-        <h2>Contact Information</h2>
-        <ul>
-            <li>Phone number: +1234567890</li>
-            <li>Email (Personal): sudeep.sarkar@gmail.com</li>
-            <li>Email (College): sudeep.sarkar@tcetmumbai.in</li>
+
+    <div class="part part1" id="part1">
+        <img class="profile-photo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgldoBd6Z1USH-JEBL-DvhU_0e6OvQ7u9Nh81QplriaWzSUeA2AsEcdY3w&s=10" alt="Profile Photo">
+        <h2>Sudeep Sarkar</h2>
+        <h4>B 42</h4>
+    </div>
+    <div class="part part2" id="part2">
+        <div class="education">
+            <h4>Education</h4>
+            <ul class="education-list">
+                <li>SSC - Pioneer English School, Kandivali</li>
+                <li>HSC - Pace Junior Science College, Borivali</li>
+            </ul>
+        </div>
+    </div>
+    <div class="part part3" id="part3">
+        <h4>Skills</h4>
+        <ul class="skills-list">
+            <li>Adaptability</li>
+            <li>Computer Knowledge</li>
+            <li>Communication</li>
+            <li>Problem Solving</li>
+            <li>Creativity</li>
         </ul>
     </div>
-    <hr>
-    <div style="text-align: center;">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZrOkUFOi2zD1oAipNYwvNBDa3HdCi-GffMA&usqp=CAU" width="300" height="150">
+    <div class="part part4" id="part4">
+        <div class="languages">
+            <h4>Languages</h4>
+            <table class="languages-table">
+                <tr>
+                    <th>Language</th>
+                    <th>Proficiency</th>
+                </tr>
+                <tr>
+                    <td>HTML</td>
+                    <td>Beginner</td>
+                </tr>
+                <tr>
+                    <td>CSS</td>
+                    <td>Intermediate</td>
+                </tr>
+                <tr>
+                    <td>C++</td>
+                    <td>Proficient</td>
+                </tr>
+                <tr>
+                    <td>C</td>
+                    <td>Proficient</td>
+                </tr>
+            </table>
+        </div>
     </div>
+    <div class="part part5" id="part5">
+        <div class="blog">
+            <h4>Blog</h4>
+            <p>Passionate about web development.</p>
+        </div>
+    </div>
+    <div class="part part6" id="part6">
+        <h4 class="connect-me">Contact Me</h4>
+        <div class="social-icons">
+            <a href="https://www.instagram.com" target="_blank"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSU-cJa2ES4HplfgopbZ38ZfFteQaofrKtx8w&usqp=CAU" alt="Instagram"></a>
+            <a href="https://www.linkedin.com" target="_blank"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSjATp-ss14PLmfHgm_jTgg_YSaiQTb5rbu0HyECOfKUM4MTsJC1X02hwJ&s=10" alt="LinkedIn"></a>
+            <a href="https://www.twitter.com" target="_blank"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuv2hnRjDdYxcNPVYDvtA98PkJGOkBS8fKj-VOxJ2FLg&s" alt="Twitter"></a>
+        </div>
+    </div>
+    <div class="scroll-to-top" onclick="scrollToTop()">&#8593;</div>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("sideMenu");
+            menu.classList.toggle("open");
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+
+        window.onscroll = function () {
+            var scrollToTopBtn = document.querySelector(".scroll-to-top");
+            if (window.scrollY > 500) {
+                scrollToTopBtn.classList.add("show");
+            } else {
+                scrollToTopBtn.classList.remove("show");
+            }
+        };
+    </script>
 </body>
 </html>
