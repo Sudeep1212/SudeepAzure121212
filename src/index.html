@@ -5,7 +5,7 @@
     <style>
         body {
             font-family: 'Futura', sans-serif;
-            background-color: #F1F1F1;
+            background-color: #7F8A87; /* Updated background color */
             margin: 0;
             padding: 0;
         }
@@ -17,24 +17,24 @@
             text-align: center;
         }
         .part1 {
-            background-color: #F8B195;
-            color: #355C7D;
+            background-color: #1C3131; /* Updated background color */
+            color: white; /* Updated text color for visibility */
         }
         .part2 {
-            background-color: #F67280;
-            color: #355C7D;
+            background-color: #05181E; /* Updated background color */
+            color: white; /* Updated text color for visibility */
         }
         .part3 {
-            background-color: #C06C84;
-            color: white;
+            background-color: #516061; /* Updated background color */
+            color: white; /* Updated text color for visibility */
         }
         .part4 {
-            background-color: #6C5B7B;
-            color: white;
+            background-color: #283E49; /* Updated background color */
+            color: white; /* Updated text color for visibility */
         }
         .part5 {
-            background-color: #355C7D;
-            color: white;
+            background-color: #7F8A87; /* Updated background color */
+            color: white; /* Updated text color for visibility */
         }
         .profile-photo {
             border-radius: 50%;
@@ -100,7 +100,7 @@
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
         }
         .connect-me {
-            color: black;
+            color: white; /* Updated text color for visibility */
         }
         .menu-icon {
             position: fixed;
@@ -122,7 +122,7 @@
             right: -250px;
             width: 250px;
             height: 100%;
-            background-color: #fff;
+            background-color: #05181E; /* Updated background color for options menu */
             z-index: 998;
             transition: right 0.3s ease-in-out;
         }
@@ -137,6 +137,7 @@
         .menu-header .close-btn {
             cursor: pointer;
             font-size: 20px;
+            color: white; /* Updated text color for options menu */
         }
         .menu-list {
             padding: 0;
@@ -151,21 +152,22 @@
         }
         .menu-list li a {
             text-decoration: none;
-            color: #000;
+            color: #7F8A87; /* Updated text color for options menu */
             transition: color 0.3s;
+            font-weight: bold; /* Added font weight for options menu */
         }
         .menu-list li a:hover {
-            color: #F67280;
+            color: white; /* Updated hover color for options menu */
         }
         .scroll-to-top {
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background-color: #F67280;
-            color: white;
+            background-color: #36454F; /* Updated background color for scroll-up button */
+            color: white; /* Updated text color for scroll-up button */
             width: 40px;
             height: 40px;
-            border-radius: 50%;
+            border-radius: 10px; /* Updated border radius for scroll-up button */
             text-align: center;
             line-height: 40px;
             cursor: pointer;
@@ -175,6 +177,10 @@
         }
         .scroll-to-top.show {
             opacity: 1;
+        }
+        .contact-me {
+            background-color: #05181E; /* Updated background color for contact me */
+            color: white; /* Updated text color for visibility */
         }
     </style>
 </head>
@@ -199,7 +205,7 @@
     </div>
 
     <div class="part part1" id="part1">
-        <img class="profile-photo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTruVKMufCB3pNYQCk36lHtm6a9YC7b4XmOmg&usqp=CAU" alt="Profile Photo">
+        <img class="profile-photo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFNKqN14EGmdEYnvYWUn-4kIRM81PcHooAJg&usqp=CAU" alt="Profile Photo">
         <h2>Sudeep Sarkar</h2>
         <h4>B 42</h4>
     </div>
@@ -255,7 +261,7 @@
             <p>Passionate about web development.</p>
         </div>
     </div>
-    <div class="part part6" id="part6">
+    <div class="part part6 contact-me" id="part6">
         <h4 class="connect-me">Contact Me</h4>
         <div class="social-icons">
             <a href="https://www.instagram.com" target="_blank"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSU-cJa2ES4HplfgopbZ38ZfFteQaofrKtx8w&usqp=CAU" alt="Instagram"></a>
@@ -263,7 +269,9 @@
             <a href="https://www.twitter.com" target="_blank"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuv2hnRjDdYxcNPVYDvtA98PkJGOkBS8fKj-VOxJ2FLg&s" alt="Twitter"></a>
         </div>
     </div>
-    <div class="scroll-to-top" onclick="scrollToTop()">&#8593;</div>
+    <div class="scroll-to-top" onclick="scrollToTop()">
+        <span>&#8593;</span>
+    </div>
 
     <script>
         function toggleMenu() {
